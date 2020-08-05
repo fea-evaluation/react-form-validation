@@ -1,0 +1,11 @@
+{
+  "name": "openapi-model-parser",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "mkdir-recursive": "^0.4.0",
+    "mustache": "^4.0.1",
+    "swagger2openapi": "^6.2.2"
+  }
+}
