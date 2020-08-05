@@ -1,0 +1,26 @@
+pre {
+  border: solid 1px #ddd;
+  margin: 0;
+  padding: 1em;
+}
+
+.container {
+  min-width: 900px;
+  max-width: 1400px;
+  margin: auto;
+  padding: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
+}
+
+.container > .form {
+  display: grid;
+  gap: 0.5em;
+}
+
+.container > .form > div > label {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5em;
+}
