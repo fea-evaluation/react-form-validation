@@ -2,14 +2,14 @@
 
 This project is used to evaluate how to implement form validation in react. Here are the...
 
-## Functionalities to evaluate
+## Functionalities to evaluate (with [react-hook-form](https://react-hook-form.com/))
 
-- custom validations (e.g. functions)
-- asynchronous validations
-- swagger model based validation
-- nested value structure
-- validation of multiple combined fields
-- field by field validation
+- ✔️ field by field validation - use `all`, `onBlur` or `onChange` for the `useForm` option [`mode`](https://react-hook-form.com/api#useForm)
+- ✔️ custom validations (e.g. functions) - use the `validate` option in [`register`](https://react-hook-form.com/api#register) ([example](https://github.com/react-hook-form/react-hook-form/blob/master/examples/customValidation.tsx))
+- ✔️ asynchronous validations - via custom validations ([example](https://github.com/react-hook-form/react-hook-form/blob/master/examples/asyncFieldValidation.tsx))
+- ✔️ nested value structure - supported for [values](https://react-hook-form.com/advanced-usage#FieldArrays) and [errors](https://react-hook-form.com/advanced-usage#ErrorMessages)
+- ✔️ validation of multiple combined fields
+- ❌ swagger model based validation - only [supports yup, superstruct and joi](https://react-hook-form.com/get-started#SchemaValidation) out of the box
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

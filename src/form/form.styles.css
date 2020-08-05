@@ -5,8 +5,6 @@ pre {
 }
 
 .container {
-  min-width: 900px;
-  max-width: 1400px;
   margin: auto;
   padding: 2em;
   display: grid;
