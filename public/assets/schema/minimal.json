@@ -1,0 +1,106 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "eVA Arzt Backend API - Doc",
+    "contact": {
+      "email": "entwicklung@ehealth-tec.de"
+    },
+    "version": "2.0.2"
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "paths": {
+    "/api/v2/prescription/create": {
+      "post": {
+        "description": "Erstellt eine neue Verordnung",
+        "operationId": "api-prescription-create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/prescription"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Erstellung der Verordnung erfolgreich"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "prescription": {
+        "required": ["gebuehrenfrei", "gebuehrenpflichtig", "rezeptTyp", "versicherter"],
+        "type": "object",
+        "properties": {
+          "rezeptTyp": {
+            "$ref": "#/components/schemas/prescriptionType"
+          },
+          "gebuehrenfrei": {
+            "type": "boolean",
+            "nullable": false
+          },
+          "gebuehrenpflichtig": {
+            "type": "boolean",
+            "nullable": false
+          },
+          "versicherter": {
+            "$ref": "#/components/schemas/versicherter"
+          }
+        }
+      },
+      "prescriptionType": {
+        "type": "string",
+        "nullable": false,
+        "enum": [
+          "STANDARDREZEPT",
+          "BTM",
+          "SPRECHSTUNDENBEDARF",
+          "TREZEPT",
+          "PRIVATREZEPT",
+          "GRUENESREZEPT",
+          "HEILMITTEL",
+          "HILFSMITTEL"
+        ]
+      },
+      "versicherter": {
+        "required": ["adresse", "geburtsdatum", "nachname", "vorname"],
+        "type": "object",
+        "properties": {
+          "vorname": {
+            "type": "string",
+            "nullable": false
+          },
+          "nachname": {
+            "type": "string",
+            "nullable": false
+          },
+          "adresse": {
+            "$ref": "#/components/schemas/adresse"
+          }
+        }
+      },
+      "adresse": {
+        "required": ["hausnummer", "land", "ort", "postleitzahl", "strasse"],
+        "type": "object",
+        "properties": {
+          "strasse": {
+            "type": "string",
+            "nullable": false
+          },
+          "hausnummer": {
+            "type": "string",
+            "nullable": false
+          }
+        }
+      }
+    }
+  }
+}

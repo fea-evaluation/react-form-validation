@@ -1,10 +1,10 @@
 const { join, relative } = require("path");
 
-function createPaths(configFilePath, relativeModelsPath) {
+function createPaths({ c: configFilePath, ts: relativeModelsPath }) {
   const basePath = process.cwd();
 
   const absoluteConfigFilePath = join(basePath, configFilePath);
-  const absoluteModelsPath = join(basePath, relativeModelsPath);
+  const absoluteModelsPath = relativeModelsPath ? join(basePath, relativeModelsPath) : undefined;
 
   return {
     configFile: absoluteConfigFilePath,
