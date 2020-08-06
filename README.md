@@ -9,7 +9,7 @@ This project is used to evaluate how to implement form validation in react. Here
 - ✔️ asynchronous validations - via custom validations ([example](https://github.com/react-hook-form/react-hook-form/blob/master/examples/asyncFieldValidation.tsx))
 - ✔️ nested value structure - supported for [values](https://react-hook-form.com/advanced-usage#FieldArrays) and [errors](https://react-hook-form.com/advanced-usage#ErrorMessages)
 - ✔️ validation of multiple combined fields
-- ❌ swagger model based validation - only [supports yup, superstruct and joi](https://react-hook-form.com/get-started#SchemaValidation) out of the box
+- ✔️ swagger model based validation - works with convertig the Open API doc to a Joi schema with `oas2joi` (see [src/oa3-validation](src/oa3-validation))
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
