@@ -1,11 +1,11 @@
 import { useCallback } from "react";
 import { Schema } from "@hapi/joi";
-import { Resolver } from "react-hook-form";
+import { ValidationResolver } from "react-hook-form";
 import set from "lodash.set";
 
-const emptyResolver: Resolver<any, object> = (values: any) => ({ values, errors: {} });
+const emptyResolver: ValidationResolver<any, object> = (values: any) => ({ values, errors: {} });
 
-function createResolver<TFieldValues>(schema: Schema): Resolver<TFieldValues, object> {
+function createResolver<TFieldValues>(schema: Schema): ValidationResolver<TFieldValues, object> {
   return async (data: TFieldValues) => {
     const { error, value: values } = schema.validate(data, {
       abortEarly: false,
@@ -34,7 +34,7 @@ function createResolver<TFieldValues>(schema: Schema): Resolver<TFieldValues, ob
   }).required(),
 });*/
 
-export function useResolver<TFieldValues>(schema?: Schema): Resolver<TFieldValues, object> {
+export function useResolver<TFieldValues>(schema?: Schema): ValidationResolver<TFieldValues, object> {
   const resolver = useCallback(schema ? createResolver(schema) : emptyResolver, [schema]);
 
   return resolver;
