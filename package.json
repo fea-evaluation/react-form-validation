@@ -12,6 +12,7 @@
     "generate:typings": "node openapi-model-parser -c public/assets/schema/minimal.json -ts src/oa3-validation/schema/typings"
   },
   "dependencies": {
+    "@hapi/joi": "14",
     "@hookform/resolvers": "^0.1.0",
     "lodash.set": "^4.3.2",
     "oas2joi": "^2.0.1",
