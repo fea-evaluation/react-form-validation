@@ -11,7 +11,7 @@ export default function Form() {
   const schemas = useSchemas();
   const resolver = useResolver<prescription>(schemas?.prescription);
   const { handleSubmit, formState, errors, getValues, register } = useForm<prescription>({
-    mode: "all",
+    mode: "onBlur",
     resolver,
   });
 

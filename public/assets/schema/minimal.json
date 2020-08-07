@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "eVA Arzt Backend API - Doc",
+    "title": "minimal",
     "contact": {
-      "email": "entwicklung@ehealth-tec.de"
+      "email": "text@example.com"
     },
     "version": "2.0.2"
   },
@@ -13,10 +13,10 @@
     }
   ],
   "paths": {
-    "/api/v2/prescription/create": {
+    "/api/create": {
       "post": {
-        "description": "Erstellt eine neue Verordnung",
-        "operationId": "api-prescription-create",
+        "description": "create",
+        "operationId": "api-create",
         "requestBody": {
           "content": {
             "application/json": {
@@ -28,7 +28,7 @@
         },
         "responses": {
           "200": {
-            "description": "Erstellung der Verordnung erfolgreich"
+            "description": "successfull"
           }
         }
       }
